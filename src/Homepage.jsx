@@ -1,4 +1,5 @@
-import Navbar from "./Navbar";
+import React, { useState } from "react";
+// import Navbar from "./Navbar";
 import hassleImg from "./assets/hassle.png";
 import innovationImg from "./assets/innovation.png";
 import customizationImg from "./assets/customization.png";
@@ -20,21 +21,33 @@ import deenaImg from "./assets/deena.png";
 import tomImg from "./assets/tom.png";
 import tillyGreenImg from "./assets/TillyGreen.png";
 import elevateImg from "./assets/Elevate.png";
-import Footer from "./components/Footer";
+import comprehensiveImg from "./assets/Comprehen.png";
+import integratedImg from "./assets/Integrated.png";
+import unboundedImg from "./assets/Unbounded.png";
+import ClientFormModal from "./components/clientformModal";
+// import Footer from "./components/Footer";
 
-export default   function Homepage() {
+export default function Homepage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset'; // Re-enable scrolling when modal is closed
+  };
+
   return (
-    <div className="bg-[#FFF6EC] min-h-screen">
-      <Navbar />
-      <section className="py-20">
+    <div className="bg-[#FFF6EC] min-h-screen ">
+      <section className="py-18">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-primary-dark leading-tight">
-              No coding, no hassle.
-              <br />
-              With us, website & app
-              <br />
-              building is a breeze!
+            From idea to launch: SaaS platforms, mobile apps, and tech services
+             
             </h1>
             <p className="mt-6 text-primary-dark max-w-lg">
               Your vision, your software – we bring it to life. No tech expertise
@@ -42,7 +55,10 @@ export default   function Homepage() {
               ever. Plus, your dedicated expert is with you at every step.
               Get your free demo today!
             </p>
-            <button className="mt-8 bg-[#F87666] hover:bg-[#143642] text-white px-6 py-3 rounded-md font-medium border border-[#143642]">
+            <button 
+              onClick={openModal}
+              className="mt-8 bg-[#F87666] hover:bg-[#143642] text-white px-6 py-3 rounded-md font-medium border border-[#143642] transition-colors duration-300"
+            >
               Get Started
             </button>
 
@@ -99,7 +115,7 @@ export default   function Homepage() {
               </h2>
             </div>
             <div>
-              <p className="max-w-md text-white">
+              <p className="max-w-md text-primary-dark">
                 Talecraftor AI is committed to revolutionizing the digital landscape
                 through cutting-edge website & app development, enabling businesses
                 to achieve their full potential in the digital world.
@@ -179,15 +195,15 @@ export default   function Homepage() {
             </p>
             <div className="mt-8 flex flex-col md:flex-row gap-8 items-center">
               <div className="flex items-center gap-3 ">
-                <img src="/src/assets/Comprehen.png" alt="Comprehensive Toolkit" className="w-12 h-12" />
+                <img src={comprehensiveImg} alt="Comprehensive Toolkit" className="w-12 h-12" />
                 <p className="font-semibold text-sm">Comprehensive Toolkit</p>
               </div>
               <div className="flex items-center gap-3 ">
-                <img src="/src/assets/Integrated.png" alt="Integrated File Management" className="w-12 h-12" />
+                <img src={integratedImg} alt="Integrated File Management" className="w-12 h-12" />
                 <p className="font-semibold text-sm">Integrated File Management</p>
               </div>
               <div className="flex items-center gap-3 ">
-                <img src="/src/assets/Unbounded.png" alt="Unbounded Design Freedom" className="w-12 h-12" />
+                <img src={unboundedImg} alt="Unbounded Design Freedom" className="w-12 h-12" />
                 <p className="font-semibold text-sm">Unbounded Design Freedom</p>
               </div>
             </div>
@@ -308,19 +324,24 @@ export default   function Homepage() {
           <h2 className="text-2xl md:text-3xl text-primary-dark mb-8">
           Elevate your website & app development journey with Talecraftor AI's transformative solutions, designed to maximize productivity and drive success.
           </h2>
-          <button className="bg-[#F87666] hover:bg-[#143642] text-white px-8 py-3 rounded-md font-medium text-lg mb-12 border border-[#143642]">
+          <button 
+            onClick={openModal}
+            className="bg-[#F87666] hover:bg-[#143642] text-white px-8 py-3 rounded-md font-medium text-lg mb-12 border border-[#143642] transition-colors duration-300"
+          >
             Get Started
           </button>
-          <div className="flex justify-center mt-1 w-full">
+          <div className="flex justify-center mt-8 w-full">
             <img 
               src={elevateImg} 
               alt="Elevate your development journey" 
-              className="w-full max-w-75xlh-auto "
+              className="w-full max-w-9xl h-auto"
             />
           </div>
         </div>
       </section>
-      <Footer />
+      
+      {/* Client Form Modal */}
+      <ClientFormModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }

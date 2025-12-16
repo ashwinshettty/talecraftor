@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-
+import footerlogo from '../assets/footerlogo.png';
 const Footer = () => {
   return (
     <div className="bg-[#143642] text-white">
@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-6 mb-30">
             <div className="flex items-center space-x-4">
               <img 
-                src="/src/assets/footerlogo.png" 
+                src={footerlogo} 
                 alt="Talecraftor AI" 
                 className="h-12 w-auto"
               />
