@@ -35,7 +35,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: EtherapyImg,
       alt: 'eTherapy Healthcare Platform',
-      link: '#'
+      link: '/etherapy'
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: LinkedmediaImg,
       alt: 'Linked Media Advertisement Agency',
-      link: '#'
+      link: '/linked-media'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: BakoImg,
       alt: 'Bako Bakery & Cafe Website',
-      link: '#'
+      link: '/banko'
     },
     {
       id: 6,
@@ -59,7 +59,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: BloomImg,
       alt: 'Bloom Floral Shop Website',
-      link: '#'
+      link: '/bloom'
     },
     {
       id: 7,
@@ -67,7 +67,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: AmeliaImg,
       alt: 'Amelia Fashion Boutique Website',
-      link: '#'
+      link: '/amelia'
     },
     {
       id: 8,
@@ -75,7 +75,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: FocalImg,
       alt: 'Focal Photography Studio Website',
-      link: '#'
+      link: '/focal'
     },
     {
       id: 9,
@@ -83,7 +83,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: JointojoyImg,
       alt: 'Join to Joy Event Management Platform',
-      link: '#'
+      link: '/join-to-joys'
     },
     {
       id: 10,
@@ -91,7 +91,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: FurnImg,
       alt: 'Furn Modern Furniture Store',
-      link: '#'
+      link: '/furn'
     }
   ];
 

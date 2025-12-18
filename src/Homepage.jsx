@@ -41,9 +41,12 @@ export default function Homepage() {
   };
 
   return (
-    <div className="bg-[#FFF6EC] min-h-screen ">
-      <section className="py-18">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div className="bg-[#FFF6EC]">
+      <section className="min-h-screen flex items-center pt-[18%] md:pt-0">
+        <div className="max-w-7xl w-full mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+          <div className="flex justify-center md:order-last">
+            <img src={hassleImg} alt="Hassle-free website building" />
+          </div>
           <div>
             <h1 className="text-4xl md:text-5xl font-bold text-primary-dark leading-tight">
             From idea to launch: SaaS platforms, mobile apps, and tech services
@@ -55,12 +58,12 @@ export default function Homepage() {
               ever. Plus, your dedicated expert is with you at every step.
               Get your free demo today!
             </p>
-            {/* <button 
+            <button 
               onClick={openModal}
-              className="mt-8 bg-[#F87666] hover:bg-[#143642] text-white px-6 py-3 rounded-md font-medium  transition-colors duration-300"
+              className="md:hidden mt-8 bg-[#F87666] hover:bg-[#143642] text-white px-6 py-3 rounded-md font-medium transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-lg"
             >
               Get Started
-            </button> */}
+            </button>
 
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-12">
               <div className="flex items-center gap-3">
@@ -85,10 +88,6 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="flex justify-center">
-            <img src={hassleImg} alt="Hassle-free website building" />
           </div>
         </div>
       </section>
@@ -326,7 +325,7 @@ export default function Homepage() {
           </h2>
           <button 
             onClick={openModal}
-            className="bg-[#F87666] hover:bg-[#143642] text-white px-8 py-3 rounded-md font-medium text-lg mb-12 transition-colors duration-300"
+            className="bg-[#F87666] hover:bg-[#143642] text-white px-8 py-3 rounded-md font-medium text-lg mb-12 transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-lg"
           >
             Get Started
           </button>

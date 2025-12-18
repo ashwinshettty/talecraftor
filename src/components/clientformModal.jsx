@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import footerLogo from "../assets/footerlogo.png";
 import { toast } from 'react-toastify';
+import api from "../sevices/api";
 import 'react-toastify/dist/ReactToastify.css';
 
 const ClientFormModal = ({ isOpen, onClose }) => {
@@ -40,39 +41,12 @@ const ClientFormModal = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
 
     try {
-      // Prepare form data - using requirement value directly as it comes from the select options
       const submissionData = { ...formData };
+      const response = await api.post('/client-form', submissionData);
+      const data = response.data;
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:4000'}/api/client-form`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(submissionData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        // Handle validation errors
-        if (data.errors && Array.isArray(data.errors)) {
-          // Format the error messages from the backend
-          const errorMessages = data.errors.map(err => {
-            // If it's a validation error with a path and msg
-            if (err.msg) return err.msg;
-            // If it's a simple error message
-            return typeof err === 'object' ? JSON.stringify(err) : err;
-          });
-          
-          throw new Error(errorMessages.join('\n'));
-        }
-        throw new Error(data.message || 'Something went wrong');
-      }
-
-      // Show success message
-      toast.success('Thank you for your submission! We will get back to you soon.');
+      toast.success(data.message || 'Thank you for your submission! We will get back to you soon.');
       
-      // Reset form
       setFormData({
         fullName: "",
         email: "",
@@ -82,19 +56,31 @@ const ClientFormModal = ({ isOpen, onClose }) => {
         message: "",
       });
 
-      // Close the modal
       onClose();
       
     } catch (error) {
       console.error('Error submitting form:', error);
-      toast.error(error.message || 'Failed to submit form. Please try again.');
+      
+      let errorMessage = 'Failed to submit form. Please try again.';
+      if (error.response && error.response.data) {
+        const responseData = error.response.data;
+        if (responseData.errors && Array.isArray(responseData.errors)) {
+          errorMessage = responseData.errors.map(err => err.msg).join('\n');
+        } else if (responseData.message) {
+          errorMessage = responseData.message;
+        }
+      } else if (error.message) {
+        errorMessage = error.message;
+      }
+
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div className="relative w-full max-w-lg my-8">
         {/* Close */}
         <button
@@ -104,25 +90,23 @@ const ClientFormModal = ({ isOpen, onClose }) => {
           ✕
         </button>
 
-        <div className="bg-white rounded-3xl shadow-2xl">
+        <div className="bg-white rounded-3xl shadow-2xl overflow-y-auto max-h-[80vh] no-scrollbar">
           {/* Header */}
-          <div className="bg-[#143642] px-6 py-4 text-white rounded-t-3xl relative">
-            <div className="absolute top-3 left-4">
-              <img src={footerLogo} alt="Logo" className="h-16 w-auto" />
-            </div>
-            <div className="text-center pt-2">
-              <h2 className="text-2xl font-bold">Let's Build Something Great</h2>
-              <p className="text-white/80 text-sm mt-1">
+          <div className="bg-[#143642] px-4 sm:px-6 py-4 text-white rounded-t-3xl flex items-center gap-4">
+            <img src={footerLogo} alt="Logo" className="h-12 sm:h-16 w-auto flex-shrink-0" />
+            <div className="text-left">
+              <h2 className="text-xl sm:text-2xl font-bold">Let's Build Something Great</h2>
+              <p className="text-white/80 text-xs sm:text-sm mt-1">
                 Share your idea and our experts will contact you
               </p>
             </div>
           </div>
 
           {/* Form */}
-          <div className="p-5">
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="p-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               {/* Inputs */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Full Name <span className="text-red-500">*</span>
@@ -198,15 +182,14 @@ const ClientFormModal = ({ isOpen, onClose }) => {
               {/* Message */}
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Tell us about your project
+                  Tell us about your project (Optional)
                 </label>
                 <textarea
                   name="message"
-                  rows="2"
+                  rows="1"
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-3 py-2 rounded-lg border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-[#F87666] focus:outline-none transition"
-                  required
                 />
               </div>
 
@@ -227,9 +210,9 @@ const ClientFormModal = ({ isOpen, onClose }) => {
                 ) : 'Submit'}
               </button>
 
-              <p className="text-center text-sm text-gray-500">
+              {/* <p className="text-center text-sm text-gray-500 ">
                 We respect your privacy. No spam. Ever.
-              </p>
+              </p> */}
             </form>
           </div>
         </div>

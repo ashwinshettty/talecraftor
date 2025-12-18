@@ -1,12 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import furniCraftImage from '../assets/Furnicraft.png';
-import homepageImg from '../assets/webdesignassets/homepage.png';
-import mainImg from '../assets/webdesignassets/main.png';
-import aboutusImg from '../assets/webdesignassets/aboutus.png';
-import productImg from '../assets/webdesignassets/product.png';
-import whatourImg from '../assets/webdesignassets/whatour.png';
-import footerImg from '../assets/webdesignassets/footer.png';
+import funcraftHome from '../assets/webdesignassets/funcrafthome.png';
 
 const FurniCraft = () => {
   return (
@@ -66,46 +61,11 @@ const FurniCraft = () => {
         </div>
 
         {/* Web Design Images Section */}
-        <div className="mt-16 ">
+        <div className="mt-16">
           <div className="w-full">
             <img 
-              src={homepageImg} 
-              alt="FurniCraft Homepage" 
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="w-full">
-            <img 
-              src={mainImg} 
-              alt="FurniCraft Main Page" 
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="w-full">
-            <img 
-              src={aboutusImg} 
-              alt="FurniCraft About Us" 
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="w-full">
-            <img 
-              src={productImg} 
-              alt="FurniCraft Products" 
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="w-full">
-            <img 
-              src={whatourImg} 
-              alt="FurniCraft Testimonials" 
-              className="w-full h-auto"
-            />
-          </div>
-          <div className="w-full">
-            <img 
-              src={footerImg} 
-              alt="FurniCraft Footer" 
+              src={funcraftHome} 
+              alt="FurniCraft Homepage Design" 
               className="w-full h-auto"
             />
           </div>

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import api from '../sevices/api';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +11,7 @@ const ContactUs = () => {
     projectDetails: '',
     budget: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,19 +21,34 @@ const ContactUs = () => {
     }));
   };
 
-  // Helper function to get text color class based on field value
   const getTextColorClass = (value) => {
     return value ? 'text-[#143642] bg-[#FFF8F0]' : 'text-black';
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
+    setIsSubmitting(true);
+    try {
+                        const response = await api.post('/talecraftor/contact', formData);
+      toast.success(response.data.message || 'Form submitted successfully!');
+      setFormData({
+        name: '',
+        email: '',
+        contactNumber: '',
+        projectDetails: '',
+        budget: ''
+      });
+    } catch (error) {
+      toast.error(error.response?.data?.message || 'An error occurred. Please try again.');
+      console.error('Form submission error:', error);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <section id="contact" className="mb-20 md:mb-18">
+      <ToastContainer position="bottom-right" autoClose={5000} hideProgressBar={false} />
       <div className="container mx-auto px-5 max-w-4xl">
         <div className="text-[#143642] p-8 md:p-12 text-center">
           <span className="text-sm font-semibold tracking-wider text-[#F87666] block mb-2">CONTACT US</span>
@@ -116,9 +135,10 @@ const ContactUs = () => {
           <div className="flex justify-center pt-4 border-t border-gray-200">
             <button
               type="submit"
-              className="bg-[#F87666] hover:bg-[#143642] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 w-full md:w-auto text-center border border-[#143642] hover:border-[#fff]"
+              className="bg-[#F87666] hover:bg-[#143642] text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-300 w-full md:w-auto text-center border border-[#143642] hover:border-[#fff] disabled:opacity-50"
+              disabled={isSubmitting}
             >
-              Send
+              {isSubmitting ? 'Sending...' : 'Send'}
             </button>
           </div>
         </form>
@@ -168,7 +188,6 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

@@ -1,11 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import velobankImage from '../assets/Velobank.png';
+import veloHomepage from '../assets/webdesignassets/velohomepage.png';
+import veloMain from '../assets/webdesignassets/velomain.png';
+import veloProduct from '../assets/webdesignassets/veloproduct.png';
+import veloMainProduct from '../assets/webdesignassets/velo mainproduct.png';
+import veloDesign from '../assets/webdesignassets/velodesign.png';
+import veloLoptop from '../assets/webdesignassets/veloloptop.png';
 
 const Velobank = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="w-full px-0 py-16">
+      <div className="w-full max-w-full px-0 py-16 mx-0">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Column - Main Image */}
           <div className="w-full lg:w-1/2 ml-0 lg:ml-[-20px]">
@@ -25,26 +31,20 @@ const Velobank = () => {
             <h1 className="text-3xl md:text-3xl lg:text-4xl font-bold text-[#143642] mb-6">
               Velobank
             </h1>
-            <p className="text-[#143642] mb-6">
-              Velobank is a modern digital banking platform designed for the next generation of banking customers. 
-              With a focus on user experience and cutting-edge financial technology, Velobank offers seamless 
-              online and mobile banking solutions that make managing finances simple, secure, and efficient.
-            </p>
-            
             <div className="space-y-5">
               <div>
                 <h3 className="text-lg font-semibold text-[#F87666]">Date</h3>
-                <p className="text-[#143642]">2024</p>
+                <p className="text-[#143642]">19 July 2022</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold text-[#F87666]">Category</h3>
-                <p className="text-[#143642]">Web Design, Fintech</p>
+                <p className="text-[#143642]">Website Design & Development</p>
               </div>
               
               <div>
                 <h3 className="text-lg font-semibold text-[#F87666]">Industry</h3>
-                <p className="text-[#143642]">Banking & Finance</p>
+                <p className="text-[#143642]">Fintech</p>
               </div>
               
               <div className="pt-4">
@@ -61,6 +61,63 @@ const Velobank = () => {
             </div>
           </div>
         </div>
+
+        {/* Web Design Images Section */}
+        <div className="mt-16 space-y-4">
+          <div className="w-full">
+            <img 
+              src={veloHomepage} 
+              alt="Velobank Homepage" 
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="w-full">
+            <img 
+              src={veloMain} 
+              alt="Velobank Main Page" 
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="w-full">
+            <img 
+              src={veloProduct} 
+              alt="Velobank Products" 
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="w-full">
+            <img 
+              src={veloMainProduct} 
+              alt="Velobank Main Product" 
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="w-full">
+            <img 
+              src={veloDesign} 
+              alt="Velobank Design" 
+              className="w-full h-auto"
+            />
+          </div>
+          <div className="w-full">
+            <img 
+              src={veloLoptop} 
+              alt="Velobank on Laptop" 
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        {/* Back to Top Button */}
+        {/* <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-8 right-8 bg-[#F87666] hover:bg-[#e06b5c] text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition-all duration-300"
+          aria-label="Back to top"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button> */}
       </div>
     </div>
   );

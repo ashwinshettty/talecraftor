@@ -18,6 +18,14 @@ import YumePay from './bandingcasestudy/Yume Pay';
 import SolidStarts from './bandingcasestudy/Solid Starts';
 import FurniCraft from './webdesigncasestudy/FurniCraft';
 import Velobank from './webdesigncasestudy/Velobank';
+import ETherapy from './webdesigncasestudy/ETherapy';
+import LinkedMedia from './webdesigncasestudy/Linked Media';
+import Banko from './webdesigncasestudy/Banko';
+import Bloom from './webdesigncasestudy/Bloom';
+import Amelia from './webdesigncasestudy/Amelia';
+import Focal from './webdesigncasestudy/Focal';
+import JoinToJoys from './webdesigncasestudy/Join To Joys';
+import Furn from './webdesigncasestudy/furn';
 function App() {
   return (
     <Router>
@@ -41,6 +49,14 @@ function App() {
             <Route path="/solid-starts" element={<SolidStarts />} />
             <Route path="/furnicraft" element={<FurniCraft />} />
             <Route path="/velobank" element={<Velobank />} />
+            <Route path="/etherapy" element={<ETherapy />} />
+            <Route path="/linked-media" element={<LinkedMedia />} />
+            <Route path="/banko" element={<Banko />} />
+            <Route path="/bloom" element={<Bloom />} />
+            <Route path="/amelia" element={<Amelia />} />
+            <Route path="/focal" element={<Focal />} />
+            <Route path="/join-to-joys"element={<JoinToJoys/>}/>
+            <Route path="/furn"element={<Furn/>}/>
           </Routes>
         </main>
         <Footer />
