@@ -19,7 +19,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: FurnicraftImg,
       alt: 'Furnicraft Website',
-      link: '#'
+      link: '/furnicraft'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const WebsiteProjects = () => {
       category: 'UI/UX Design',
       image: VelobankImg,
       alt: 'Velobank Website',
-      link: '#'
+      link: '/velobank'
     },
     {
       id: 3,

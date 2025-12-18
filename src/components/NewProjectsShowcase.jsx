@@ -19,7 +19,7 @@ const NewProjectsShowcase = () => {
       category: 'UI/UX Design',
       image: ZenitImg,
       alt: 'Zenit Design Studio Website',
-      link: '#'
+      link: '/zentiamedia'
     },
     {
       id: 2,
@@ -27,7 +27,7 @@ const NewProjectsShowcase = () => {
       category: 'Web Development',
       image: VolgaImg,
       alt: 'Volga Digital Agency Website',
-      link: '#'
+      link: '/volga'
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ const NewProjectsShowcase = () => {
       category: 'Branding & Web Design',
       image: VeggitoImg,
       alt: 'Veggito Plant-Based Foods Brand',
-      link: '#'
+      link: '/veggito'
     },
     {
       id: 4,
@@ -43,7 +43,7 @@ const NewProjectsShowcase = () => {
       category: 'Branding & UI/UX',
       image: TraexImg,
       alt: 'Traex Logistics Solutions',
-      link: '#'
+      link: '/traex'
     },
     {
       id: 5,
@@ -51,7 +51,7 @@ const NewProjectsShowcase = () => {
       category: 'Branding & Web Design',
       image: MoveImg,
       alt: 'Move Relocation Services',
-      link: '#'
+      link: '/move'
     },
     {
       id: 6,
@@ -59,7 +59,7 @@ const NewProjectsShowcase = () => {
       category: 'UI/UX & Development',
       image: DifyImg,
       alt: 'Dify AI Solutions Platform',
-      link: '#'
+      link: '/dify'
     },
     {
       id: 7,
@@ -67,7 +67,7 @@ const NewProjectsShowcase = () => {
       category: 'Branding & Web Design',
       image: RestinsImg,
       alt: 'Restins Insurance Services',
-      link: '#'
+      link: '/restins'
     },
     {
       id: 8,
@@ -75,7 +75,7 @@ const NewProjectsShowcase = () => {
       category: 'UI/UX & Branding',
       image: NurtruImg,
       alt: 'Nurtru Health & Wellness Platform',
-      link: '#'
+      link: '/nurtru'
     },
     {
       id: 9,
@@ -83,7 +83,7 @@ const NewProjectsShowcase = () => {
       category: 'Branding & Web Design',
       image: YumeImg,
       alt: 'Yume Japanese Restaurant Branding',
-      link: '#'
+      link: '/yume-pay'
     },
     {
       id: 10,
@@ -91,7 +91,7 @@ const NewProjectsShowcase = () => {
       category: 'UI/UX & Development',
       image: SolidImg,
       alt: 'Solid Construction Solutions',
-      link: '#'
+      link: '/solid-starts'
     }
   ];
 
@@ -117,13 +117,13 @@ const NewProjectsShowcase = () => {
               <div className="bg-[#FFF8F0] p-6 rounded-b-xl">
                 <h3 className="text-xl font-semibold text-[#143642] mb-1">{project.title}</h3>
                 <p className="text-[#143642] text-sm mb-4">{project.category}</p>
-                <a 
-                  href={project.link} 
+                <Link 
+                  to={project.link}
                   className="inline-flex items-center text-[#F87666] font-semibold text-sm hover:text-[#143642] transition-colors"
                 >
                   View full project
                   <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

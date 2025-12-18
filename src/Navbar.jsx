@@ -1,5 +1,5 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from './assets/TalecraftorAIlogo.png';
 import ClientFormModal from './components/clientformModal';
 
@@ -43,7 +43,7 @@ export default function Navbar() {
           <h1 className="text-xl font-bold text-gray-800">Talecraftor AI</h1>
         </a>
         <div className="hidden md:flex items-center gap-8 text-gray-600 font-medium">
-          <a href="#" className="hover:text-[#F87666] transition-colors">Home</a>
+          <Link to="/" className="hover:text-[#F87666] transition-colors">Home</Link>
           <a href="#" className="hover:text-[#F87666] transition-colors">Craftfolio</a>
           <div className="relative" ref={dropdownRef}>
             <button 
@@ -76,7 +76,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-4">
           <button 
             onClick={openModal}
-            className="bg-[#F87666] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#143642] transition-colors shadow-sm border border-[#143642]"
+            className="bg-[#F87666] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#143642] transition-colors shadow-sm "
           >
             Get Started
           </button>

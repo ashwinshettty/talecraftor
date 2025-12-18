@@ -55,12 +55,12 @@ export default function Homepage() {
               ever. Plus, your dedicated expert is with you at every step.
               Get your free demo today!
             </p>
-            <button 
+            {/* <button 
               onClick={openModal}
-              className="mt-8 bg-[#F87666] hover:bg-[#143642] text-white px-6 py-3 rounded-md font-medium border border-[#143642] transition-colors duration-300"
+              className="mt-8 bg-[#F87666] hover:bg-[#143642] text-white px-6 py-3 rounded-md font-medium  transition-colors duration-300"
             >
               Get Started
-            </button>
+            </button> */}
 
             <div className="flex flex-col md:flex-row gap-8 md:gap-12 mt-12">
               <div className="flex items-center gap-3">
@@ -326,7 +326,7 @@ export default function Homepage() {
           </h2>
           <button 
             onClick={openModal}
-            className="bg-[#F87666] hover:bg-[#143642] text-white px-8 py-3 rounded-md font-medium text-lg mb-12 border border-[#143642] transition-colors duration-300"
+            className="bg-[#F87666] hover:bg-[#143642] text-white px-8 py-3 rounded-md font-medium text-lg mb-12 transition-colors duration-300"
           >
             Get Started
           </button>
