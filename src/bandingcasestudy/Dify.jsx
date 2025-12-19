@@ -16,19 +16,19 @@ import difyCardTable from '../assets/difycardtable.png';
 const Dify = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="max-w-7xl mx-auto px-0">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row min-h-screen">
           {/* Left Column - Image */}
-          <div className="w-full md:w-1/2 flex items-center justify-center ml-8 md:ml-[-70px]">
+          <div className="w-full md:w-1/2 flex items-center justify-center py-8 md:py-0 md:ml-[-70px]">
             <img 
               src={difyImage} 
               alt="Dify" 
-              className="w-[90vh] h-[90vh] object-cover"
+              className="w-full h-auto max-w-sm md:max-w-none md:w-[90vh] md:h-[90vh] object-cover"
             />
           </div>
           
           {/* Right Column - Content */}
-          <div className="w-full md:w-1/2 px-6 md:px-12 flex items-center ml-8 md:ml-[-10px]">
+          <div className="w-full md:w-1/2 px-0 md:px-12 flex items-center md:ml-[-10px]">
             <div className="w-full max-w-md mx-auto">
               <h2 className="text-sm font-semibold text-[#F87666] uppercase tracking-wider mb-2">
                 FULL CASE STUDY
@@ -58,7 +58,7 @@ const Dify = () => {
               
               <Link 
                 to="/contact" 
-                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full md:w-auto"
+                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full sm:w-auto mb-8 md:mb-0"
               >
                 Contact Us
               </Link>

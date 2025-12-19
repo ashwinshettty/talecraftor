@@ -21,28 +21,28 @@ import veggitodrinkcup from '../assets/veggitodrinkcup.png';
 
 const Veggito = () => {
   return (
-    <div className="min-h-screen bg-transparent">
-      <div className="max-w-7xl mx-auto px-0">
+    <div className="min-h-screen">
+      <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row min-h-screen">
           {/* Left Column - Image */}
-          <div className="w-full md:w-1/2 flex items-center justify-center ml-8 md:ml-[-70px]">
+          <div className="w-full md:w-1/2 flex items-center justify-center md:py-0 md:ml-[-90px]">
             <img 
               src={veggitoImage} 
               alt="Veggito" 
-              className="w-[90vh] h-[90vh] object-cover"
+              className="w-full h-auto max-w-sm md:max-w-none md:w-[90vh] md:h-[90vh] object-cover"
             />
           </div>
           
           {/* Right Column - Content */}
-          <div className="w-full md:w-1/2 px-6 md:px-12 flex items-center ml-8 md:ml-[-10px]">
+          <div className="w-full md:w-1/2 px-0 md:px-12 flex items-center md:ml-[-10px]">
             <div className="w-full max-w-md mx-auto">
               <h2 className="text-sm font-semibold text-[#F87666] uppercase tracking-wider mb-2">
                 FULL CASE STUDY
               </h2>
-                 <h1 className="text-4xl font-bold text-[#143642] mb-6">
+                 <h1 className="text-4xl font-bold text-[#143642] ">
                 Veggito
               </h1>
-              <p className="text-lg text-[#143642] mb-6">
+              <p className="text-lg text-[#143642] m">
               Veggito, the brand’s mascot and ambassador, is accompanied by his friends Refrito and Batatita, forming 
                a combo full of flavor, health, and consciousness.
               </p>
@@ -67,7 +67,7 @@ const Veggito = () => {
               
               <Link 
                 to="/contact" 
-                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full md:w-auto"
+                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full sm:w-auto mb-8 md:mb-0"
               >
                 Contact Us
               </Link>
@@ -76,25 +76,59 @@ const Veggito = () => {
         </div>
       </div>
       
-      {/* Full width images section */}
-      <div className="w-full space-y-3 bg-transparent">
-        <img src={veggitoburger} alt="Veggito Burger" className="w-full h-auto" />
-        <img src={veggitologo} alt="Veggito Logo" className="w-full h-auto" />
-        <img src={veggitoburgerlogo} alt="Veggito Burger Logo" className="w-full h-auto" />
-        <img src={veggitobgrun} alt="Veggito Background" className="w-full h-auto" />
-        <img src={veggitovlogo} alt="Veggito V Logo" className="w-full h-auto" />
-        <img src={veggitoseacher} alt="Veggito Seacher" className="w-full h-auto" />
-        <img src={veggitothreev} alt="Veggito Three V" className="w-full h-auto" />
-        <img src={veggitobluid} alt="Veggito Build" className="w-full h-auto" />
-        <img src={veggitoCharacter} alt="Veggito Character" className="w-full h-auto" />
-        <img src={veggitoListColor} alt="Veggito Color List" className="w-full h-auto" />
-        <img src={veggitobeasty} alt="Veggito Beasty" className="w-full h-auto" />
-        <img src={veggitopaper} alt="Veggito Paper" className="w-full h-auto" />
-        <img src={veggitocard} alt="Veggito Card" className="w-full h-auto" />
-        <img src={veggitodrink} alt="Veggito Drink" className="w-full h-auto" />
-        <img src={veggitovan} alt="Veggito Van" className="w-full h-auto" />
-        <img src={veggitobox} alt="Veggito Box" className="w-full h-auto" />
-        <img src={veggitodrinkcup} alt="Veggito Drink Cup" className="w-full h-auto" />
+      {/* Full width images */}
+      <div className="w-full max-w-none py-12 space-y-4">
+        <div className="w-full overflow-hidden">
+          <img src={veggitoburger} alt="Veggito Burger" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitologo} alt="Veggito Logo" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitoburgerlogo} alt="Veggito Burger Logo" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitobgrun} alt="Veggito Background" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitovlogo} alt="Veggito V Logo" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitoseacher} alt="Veggito Seacher" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitothreev} alt="Veggito Three V" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitobluid} alt="Veggito Build" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitoCharacter} alt="Veggito Character" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitoListColor} alt="Veggito Color List" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitobeasty} alt="Veggito Beasty" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitopaper} alt="Veggito Paper" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitocard} alt="Veggito Card" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitodrink} alt="Veggito Drink" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitovan} alt="Veggito Van" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitobox} alt="Veggito Box" className="w-full h-auto mx-auto" />
+        </div>
+        <div className="w-full overflow-hidden">
+          <img src={veggitodrinkcup} alt="Veggito Drink Cup" className="w-full h-auto mx-auto" />
+        </div>
       </div>
 
       {/* Back to Top Button */}

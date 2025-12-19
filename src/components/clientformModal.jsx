@@ -16,6 +16,7 @@ const ClientFormModal = ({ isOpen, onClose }) => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,8 +46,9 @@ const ClientFormModal = ({ isOpen, onClose }) => {
       const response = await api.post('/client-form', submissionData);
       const data = response.data;
 
-      toast.success(data.message || 'Thank you for your submission! We will get back to you soon.');
+      setShowThankYou(true);
       
+      // Reset form
       setFormData({
         fullName: "",
         email: "",
@@ -56,7 +58,13 @@ const ClientFormModal = ({ isOpen, onClose }) => {
         message: "",
       });
 
-      onClose();
+      // Close the modal after 3 seconds
+      setTimeout(() => {
+        setShowThankYou(false);
+        onClose();
+      }, 3000);
+      
+      toast.success(data.message || 'Thank you for your submission! We will get back to you soon.');
       
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -81,6 +89,13 @@ const ClientFormModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+      {showThankYou ? (
+        <div className="bg-white p-8 rounded-3xl shadow-2xl text-center max-w-md mx-4">
+          <div className="text-6xl mb-4">🎉</div>
+          <h3 className="text-2xl font-bold text-gray-800 mb-2">Thank You!</h3>
+          <p className="text-gray-600">We've received your message and will get back to you soon.</p>
+        </div>
+      ) : (
       <div className="relative w-full max-w-lg my-8">
         {/* Close */}
         <button
@@ -217,6 +232,7 @@ const ClientFormModal = ({ isOpen, onClose }) => {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 };

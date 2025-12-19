@@ -14,7 +14,7 @@ import yumeDesign from '../assets/yumedesign.png';
 const YumePay = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="w-full px-0 py-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Column - Main Image */}
           <div className="w-full lg:w-1/2">
@@ -26,7 +26,7 @@ const YumePay = () => {
           </div>
 
           {/* Right Column - Project Details */}
-          <div className="w-full lg:w-1/2 mt-11">
+          <div className="w-full lg:w-1/2 mt-8 lg:mt-11">
           <h2 className="text-sm font-semibold text-[#F87666] uppercase tracking-wider mb-10">
                 FULL CASE STUDY
               </h2>
@@ -57,7 +57,7 @@ const YumePay = () => {
               
               <Link 
                 to="/contact" 
-                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full md:w-auto"
+                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full sm:w-auto mb-8 md:mb-0"
               >
                 Contact Us
               </Link>

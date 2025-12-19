@@ -6,7 +6,7 @@ import furnDesignImage from '../assets/webdesignassets/furndesign.png';
 const FurniCraft = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="w-full max-w-full px-0 py-16 mx-0">
+      <div className="w-full max-w-full px-4 sm:px-6 lg:px-0 py-16 mx-0">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Column - Main Image */}
           <div className="w-full lg:w-1/2 ml-0 lg:ml-[-20px]">
@@ -18,7 +18,7 @@ const FurniCraft = () => {
           </div>
 
           {/* Right Column - Project Details */}
-          <div className="w-full lg:w-1/2 mt-11">
+          <div className="w-full lg:w-1/2 mt-8 lg:mt-11">
             <h2 className="text-sm font-semibold text-[#F87666] uppercase tracking-wider mb-10">
               FULL CASE STUDY
             </h2>
@@ -50,7 +50,7 @@ const FurniCraft = () => {
               
               <Link 
                 to="/contact" 
-                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full md:w-auto"
+                className="inline-block bg-[#F87666] hover:bg-[#143642] text-white font-medium py-3 px-8 rounded-md transition duration-300 text-center w-full sm:w-auto"
               >
                 Contact Us
               </Link>

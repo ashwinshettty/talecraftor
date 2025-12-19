@@ -45,34 +45,9 @@ export default function Navbar() {
         </a>
         <div className="hidden md:flex items-center gap-8 text-gray-600 font-medium">
           <Link to="/" className="hover:text-[#F87666] transition-colors">Home</Link>
-          <a href="#" className="hover:text-[#F87666] transition-colors">Craftfolio</a>
-          <div className="relative" ref={dropdownRef}>
-            <button 
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-1 hover:text-[#F87666] transition-colors"
-            >
-              Become a Craftor
-              <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {isDropdownOpen && (
-              <div className="absolute left-0 mt-2 w-48 bg-[#143642] rounded-lg shadow-lg py-2 z-50 border border-[#143642]">
-                <button 
-                  onClick={navigateToWebsiteProjects}
-                  className="w-full text-left px-4 py-2 text-[#FFF8F0] hover:bg-[#F87666] hover:text-[#FFF8F0] transition-colors"
-                >
-                  website
-                </button>
-                <button 
-                  onClick={navigateToNewProjects}
-                  className="w-full text-left px-4 py-2 text-[#FFF8F0] hover:bg-[#F87666] hover:text-[#FFF8F0] transition-colors"
-                >
-                  branding
-                </button>
-              </div>
-            )}
-          </div>
+          <Link to="/websites" className="hover:text-[#F87666] transition-colors">Website</Link>
+          <Link to="/new-projects" className="hover:text-[#F87666] transition-colors">Branding</Link>
+          <a href="#" className="hover:text-[#F87666] transition-colors">Become a Craftor</a>
         </div>
         <div className="hidden md:flex items-center gap-4">
           <button 
@@ -96,34 +71,9 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-[#FFF8F0] px-6 pb-4 space-y-4">
           <Link to="/" className="block hover:text-[#F87666] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          <a href="#" className="block hover:text-[#F87666] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Craftfolio</a>
-          <div className="relative">
-            <button 
-              onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-              className="flex items-center gap-1 w-full text-left hover:text-[#F87666] transition-colors"
-            >
-              Become a Craftor
-              <svg className={`w-4 h-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            {isDropdownOpen && (
-              <div className="mt-2 w-full bg-[#143642] rounded-lg shadow-lg py-2 z-50 border border-[#143642]">
-                <button 
-                  onClick={() => { navigateToWebsiteProjects(); setIsMobileMenuOpen(false); }}
-                  className="w-full text-left px-4 py-2 text-[#FFF8F0] hover:bg-[#F87666] hover:text-[#FFF8F0] transition-colors"
-                >
-                  website
-                </button>
-                <button 
-                  onClick={() => { navigateToNewProjects(); setIsMobileMenuOpen(false); }}
-                  className="w-full text-left px-4 py-2 text-[#FFF8F0] hover:bg-[#F87666] hover:text-[#FFF8F0] transition-colors"
-                >
-                  branding
-                </button>
-              </div>
-            )}
-          </div>
+          <Link to="/websites" className="block hover:text-[#F87666] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Website</Link>
+          <Link to="/new-projects" className="block hover:text-[#F87666] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Branding</Link>
+          <a href="#" className="block hover:text-[#F87666] transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Become a Craftor</a>
           <button 
             onClick={() => { openModal(); setIsMobileMenuOpen(false); }}
             className="w-full text-center bg-[#F87666] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#143642] transition-all duration-300 transform hover:scale-105 shadow-sm hover:shadow-lg"
