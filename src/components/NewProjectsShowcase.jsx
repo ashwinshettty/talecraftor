@@ -119,6 +119,7 @@ const NewProjectsShowcase = () => {
                 <p className="text-[#143642] text-sm mb-4">{project.category}</p>
                 <Link 
                   to={project.link}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="inline-flex items-center text-[#F87666] font-semibold text-sm hover:text-[#143642] transition-colors"
                 >
                   View full project

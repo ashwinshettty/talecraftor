@@ -18,19 +18,19 @@ import traexBuild from '../assets/traexbuild.png';
 const Traex = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row min-h-screen">
+      <div className="w-full max-w-full px-4 sm:px-6 lg:px-0 py-16 mx-0">
+        <div className="flex flex-col lg:flex-row gap-12">
           {/* Left Column - Image */}
-          <div className="w-full md:w-1/2 flex items-center justify-center py-8 md:py-0 md:ml-[-70px]">
+          <div className="w-full lg:w-1/2 ml-0 lg:ml-[-20px]">
             <img 
               src={traexImage} 
               alt="Traex" 
-              className="w-full h-auto max-w-sm md:max-w-none md:w-[90vh] md:h-[90vh] object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
           
           {/* Right Column - Content */}
-          <div className="w-full md:w-1/2 px-0 md:px-12 flex items-center md:ml-[-10px]">
+          <div className="w-full lg:w-1/2 px-0 lg:px-12 flex items-center">
             <div className="w-full max-w-md mx-auto">
               <h2 className="text-sm font-semibold text-[#F87666] uppercase tracking-wider mb-2">
                 FULL CASE STUDY

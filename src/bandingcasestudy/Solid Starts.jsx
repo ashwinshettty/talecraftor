@@ -17,18 +17,18 @@ import solidFlag from '../assets/solidflag.png';
 const SolidStarts = () => {
   return (
     <div className="min-h-screen bg-transparent">
-      <div className="w-full px-4 sm:px-6 lg:px-8 py-16">
+      <div className="w-full max-w-full px-4 sm:px-6 lg:px-0 py-16 mx-0">
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Left Column - Main Image */}
-          <div className="w-full lg:w-1/2">
+          {/* Left Column - Image */}
+          <div className="w-full lg:w-1/2 ml-0 lg:ml-[-20px]">
             <img 
               src={solidImage} 
               alt="Solid Starts" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-contain"
             />
           </div>
-
-          {/* Right Column - Project Details */}
+          
+          {/* Right Column - Content */}
           <div className="w-full lg:w-1/2 mt-8 lg:mt-11">
             <h2 className="text-sm font-semibold text-[#F87666] uppercase tracking-wider mb-10">
               FULL CASE STUDY
